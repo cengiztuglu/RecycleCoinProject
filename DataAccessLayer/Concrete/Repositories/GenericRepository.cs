@@ -26,7 +26,7 @@ namespace DataAccessLayer.Concrete.Repositories
         {
             _object.Add(p);
             C.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public List<T> List()
