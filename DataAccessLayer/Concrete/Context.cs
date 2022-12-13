@@ -21,8 +21,8 @@ namespace DataAccessLayer.Concrete
 
         public DbSet<User_Type> User_Types{ get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
 
-     
 
     }
 }

@@ -51,7 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IChangeDal.cs" />
+    <Compile Include="Abstract\ILoginDal.cs" />
+    <Compile Include="Abstract\IPendigTransactionDal.cs" />
+    <Compile Include="Abstract\IProccesDal.cs" />
+    <Compile Include="Abstract\IProductInfoDal.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IUserInfoDal.cs" />
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="Migrations\202212100122518_mig1.cs" />
+    <Compile Include="Migrations\202212100122518_mig1.designer.cs">
+      <DependentUpon>202212100122518_mig1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +76,11 @@
       <Project>{4b54c8ec-aba2-44c3-8a32-e8d58251218e}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202212100122518_mig1.resx">
+      <DependentUpon>202212100122518_mig1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
