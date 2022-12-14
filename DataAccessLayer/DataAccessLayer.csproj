@@ -58,8 +58,16 @@
     <Compile Include="Abstract\IProductInfoDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IUserInfoDal.cs" />
+    <Compile Include="Abstract\IWalletDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EfChangeDal.cs" />
+    <Compile Include="EntityFramework\EfLoginDal.cs" />
+    <Compile Include="EntityFramework\EfPendigTransctionDal.cs" />
+    <Compile Include="EntityFramework\EfProccesDal.cs" />
+    <Compile Include="EntityFramework\EfProductInfoDal.cs" />
+    <Compile Include="EntityFramework\EfUserInfoDal.cs" />
+    <Compile Include="EntityFramework\EfWalletDal.cs" />
     <Compile Include="Migrations\202212100122518_mig1.cs" />
     <Compile Include="Migrations\202212100122518_mig1.designer.cs">
       <DependentUpon>202212100122518_mig1.cs</DependentUpon>
