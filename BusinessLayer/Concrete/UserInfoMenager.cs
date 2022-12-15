@@ -22,6 +22,10 @@ namespace BusinessLayer.Abstact
         {
             return _userInfoDal.List();
         }
-    
+
+        public void UserInfoAdd(UserInfo userInfo)
+        {
+            _userInfoDal.Insert(userInfo);
+        }
     }
 }

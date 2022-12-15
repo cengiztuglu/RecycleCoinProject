@@ -1,7 +1,9 @@
 ﻿
 using BusinessLayer.Abstact;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +34,26 @@ namespace RecycleCoinProject.Controllers
         [HttpPost]
         public ActionResult AddUser(UserInfo p)
         {
-            //ui.UserInfoAddBL(p);
-            return RedirectToAction("GetUser");
+            UserInfoValidatior cv = new UserInfoValidatior();
+            ValidationResult results =cv.Validate(p);
+            if (results.IsValid)
+            {
+                ui.UserInfoAdd(p);
+
+                return RedirectToAction("GetUser");
+
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+
+                }
+            }
+            return View();
+            
         }
+      
     }
 }

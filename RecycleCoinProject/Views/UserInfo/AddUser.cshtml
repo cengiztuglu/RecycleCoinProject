@@ -1,15 +1,44 @@
-﻿
+﻿@model EntityLayer.Concrete.UserInfo
 @{
     Layout = null;
 }
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<form class="form-group" method="post">
+
+<h1> Kullanıcı Kayıt</h1>
+<br />
+@using (Html.BeginForm("AddUser","UserInfo",FormMethod.Post))
+            {
+       <div class="form-group">
+           @Html.Label("Kullanici Adi")
+           @Html.TextBoxFor(x => x.Name)
+           @Html.ValidationMessageFor(x=>x.Name)
+           <br /> <br />
+           @Html.Label("Soy Adi")
+           @Html.TextBoxFor(x => x.Surname)
+           <br /> <br />
+           @Html.Label("Telefon Numarası")
+           @Html.TextBoxFor(x => x.PhoneNumber)
+           <br /> <br />
+           @Html.Label("SHA-256")
+           @Html.TextBoxFor(x => x.Sha256)
+           <br /> <br />
+           <button class="btn btn-primary">Kayıt Ol</button>
+
+
+
+
+
+       </div>
+            }
+
+@*<form class="form-group" method="post">
     <input type="text" placeholder="Name" name ="Name" class="form-control" />
 
    
     <br />
+
     <button class="btn btn-primary">ADD</button> 
 
 
-</form>
+</form>*@

@@ -60,12 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstact\IChangeService.cs" />
-    <Compile Include="Abstact\ILoginService.cs" />
-    <Compile Include="Abstact\IPendigTransactionService.cs" />
-    <Compile Include="Abstact\IProccesService.cs" />
-    <Compile Include="Abstact\IProductInfoService.cs" />
-    <Compile Include="Abstact\IUserInfoService.cs" />
+    <Compile Include="Abstract\IChangeService.cs" />
+    <Compile Include="Abstract\ILoginService.cs" />
+    <Compile Include="Abstract\IPendigTransactionService.cs" />
+    <Compile Include="Abstract\IProccesService.cs" />
+    <Compile Include="Abstract\IProductInfoService.cs" />
+    <Compile Include="Abstract\IUserInfoService.cs" />
     <Compile Include="Concrete\UserInfoMenager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\UserInfoValidatior.cs" />
