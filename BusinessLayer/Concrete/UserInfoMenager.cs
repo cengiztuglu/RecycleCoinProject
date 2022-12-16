@@ -18,6 +18,11 @@ namespace BusinessLayer.Abstact
             _userInfoDal = userInfoDal;
         }
 
+        public UserInfo GetById(int id)
+        {
+            return _userInfoDal.Get(x => x.UserID == id);
+        }
+
         public List<UserInfo> GetUserInfoList()
         {
             return _userInfoDal.List();
@@ -26,6 +31,16 @@ namespace BusinessLayer.Abstact
         public void UserInfoAdd(UserInfo userInfo)
         {
             _userInfoDal.Insert(userInfo);
+        }
+
+        public void UserInfoDelete(UserInfo userInfo)
+        {
+            _userInfoDal.Delete(userInfo);
+        }
+
+        public void UserInfoUpdate(UserInfo userInfo)
+        {
+            _userInfoDal.Update(userInfo);
         }
     }
 }

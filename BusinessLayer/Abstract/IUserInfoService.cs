@@ -11,5 +11,9 @@ namespace BusinessLayer.Abstact
     {
         List<UserInfo> GetUserInfoList();
         void UserInfoAdd(UserInfo userInfo);
+        UserInfo GetById(int id);
+
+        void UserInfoDelete(UserInfo userInfo);
+        void UserInfoUpdate(UserInfo userInfo);
     }
 }

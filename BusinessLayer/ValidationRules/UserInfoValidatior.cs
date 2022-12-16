@@ -12,7 +12,7 @@ namespace BusinessLayer.ValidationRules
     {
         public UserInfoValidatior()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("Kategori Adını Boş Geçemezsiniz");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Adı Boş Geçemezsiniz");
             RuleFor(x => x.PhoneNumber).MinimumLength(11).WithMessage("Lütfen 11 Karakterden Fazla Girmeyiniz");
         }
 

@@ -10,22 +10,30 @@ namespace DataAccessLayer.Concrete.Repositories
 {
     public class GenericRepository<T> : IRepository<T> where T:class
     {
-        Context C = new Context();
+        Context c = new Context();
         DbSet<T> _object;
         public GenericRepository()
         {
-            _object = C.Set<T>();
+            _object = c.Set<T>();
         }
         public void Delete(T p)
         {
-            _object.Remove(p);
-            C.SaveChanges();
+            var deletedEntity = c.Entry(p);
+            deletedEntity.State = EntityState.Deleted;
+            
+            c.SaveChanges();
+        }
+
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);  //sadece tek değer döndürür
         }
 
         public void Insert(T p)
         {
-            _object.Add(p);
-            C.SaveChanges();
+            var addedEntity = c.Entry(p);
+            addedEntity.State = EntityState.Added;//Entity state ile ekleme silme güncelleme gibi metodlararahatlıkla ulaşabiliriz
+            c.SaveChanges();
           
         }
 
@@ -41,8 +49,9 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(T p)
         {
-
-            C.SaveChanges();
+            var updateEntity = c.Entry(p);
+            updateEntity.State = EntityState.Modified;
+            c.SaveChanges();
         }
     }
 

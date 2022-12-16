@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace BusinessLayer.Abstact
 {
     internal interface IPendigTransactionService
     {
+        List<PendigTransaction> GetList();
+      
     }
 }
