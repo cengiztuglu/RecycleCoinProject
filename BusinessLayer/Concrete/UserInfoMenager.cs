@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
+using BusinessLayer.Abstact;
 
-namespace BusinessLayer.Abstact
+namespace BusinessLayer.Concrete
 {
    public class UserInfoMenager:IUserInfoService
     {

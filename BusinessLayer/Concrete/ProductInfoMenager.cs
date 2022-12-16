@@ -7,18 +7,23 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
 using BusinessLayer.Abstact;
+using BusinessLayer.Concrete;
+
 namespace BusinessLayer.Concrete
 {
+
     public class ProductInfoMenager : IProductInfoService
     {
         IProductInfoDal _productInfoDal;
+
         public ProductInfoMenager(IProductInfoDal productInfoDal)
         {
             _productInfoDal = productInfoDal;
         }
+
         public ProductInfo GetById(int id)
         {
-            return _productInfoDal.Get(x => x.ProductID==id);
+            return _productInfoDal.Get(x => x.ProductID == id);
         }
 
         public List<ProductInfo> GetProductInfoList()
