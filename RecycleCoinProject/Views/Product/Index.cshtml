@@ -11,7 +11,7 @@
         <th>#</th>
         <th>PRODUCT NAME</th>
         <th>Product Type Id</th>
-        <th>Product Type </th>
+        
         <th>Product Carbon</th>
         
         <th>Sil</th>
@@ -23,9 +23,8 @@
     {
         <tr>
             <th>@item.ProductID</th>
-            <td>@item.productType</td>
             <td>@item.ProductName</td>
-            <td>@item.productType</td>
+            <td>@item.ProductTypeID</td>
             <td>@item.ProductCarbon</td>
             <td> <a href="/AdminUserInfo/DeleteUser/@item.ProductID" class="btn btn-danger">Sil</a></td>
             <td> <a href="/AdminUserInfo/EditUser/@item.ProductID" class="btn btn-warning">Güncelle</a></td>
@@ -33,4 +32,4 @@
     }
 </table>
 
-<a href="/AdminUserInfo/AddUser" class="btn btn-info">Kullanıcı Ekle</a>
+<a href="/ProductInfo/AddProductUser" class="btn btn-info">Kullanıcı Ekle</a>

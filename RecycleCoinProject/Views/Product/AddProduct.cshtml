@@ -1,0 +1,34 @@
+﻿@model  EntityLayer.Concrete.ProductInfo
+
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1> Kullanıcı Ekle</h1>
+<br />
+@using (Html.BeginForm("AddProduct", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Ürün Adı")
+        @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductName)
+        <br /> <br />
+    
+        @Html.DropDownListFor(x=>x.ProductTypeID,(List<SelectListItem>)ViewBag.pi, new { @class = "form-control" })
+       
+        <br /> <br />
+        @Html.Label("Ürün Carbon Degeri")
+        @Html.TextBoxFor(x => x.ProductCarbon, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductCarbon)
+        <br /> <br />
+        <button class="btn btn-primary">Kaydet</button>
+
+
+
+
+
+    </div>
+}

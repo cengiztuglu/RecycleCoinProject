@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IPendigTransactionDal.cs" />
     <Compile Include="Abstract\IProccesDal.cs" />
     <Compile Include="Abstract\IProductInfoDal.cs" />
+    <Compile Include="Abstract\IProductTypeDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IUserInfoDal.cs" />
     <Compile Include="Abstract\IWalletDal.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="EntityFramework\EfPendigTransctionDal.cs" />
     <Compile Include="EntityFramework\EfProccesDal.cs" />
     <Compile Include="EntityFramework\EfProductInfoDal.cs" />
+    <Compile Include="EntityFramework\EfProductTypeDal.cs" />
     <Compile Include="EntityFramework\EfUserInfoDal.cs" />
     <Compile Include="EntityFramework\EfWalletDal.cs" />
     <Compile Include="Migrations\202212100122518_mig1.cs" />
