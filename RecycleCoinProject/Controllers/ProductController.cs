@@ -28,14 +28,14 @@ namespace RecycleCoinProject.Controllers
         [HttpGet]
         public ActionResult AddProduct()
         {
-            List<SelectListItem> valuecategory = (from x in pt.GetProductTypeList()
+            List<SelectListItem> valueproduct = (from x in pt.GetProductTypeList()
                                                   select new SelectListItem
                                                   {
                                                       Text=x.ProductName,
                                                       Value=x.ProductTypeID.ToString()
 
                                                   }).ToList();
-            ViewBag.pi = valuecategory; 
+            ViewBag.pi = valueproduct; 
             return View();
         }
         [HttpPost]
@@ -57,6 +57,28 @@ namespace RecycleCoinProject.Controllers
             }
 
             return View();
+        }
+        [HttpGet]
+        public ActionResult EditProduct(int id)
+        {
+            List<SelectListItem> valueproduct = (from x in pt.GetProductTypeList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.ProductName,
+                                                     Value = x.ProductTypeID.ToString()
+
+                                                 }).ToList();
+            ViewBag.pi = valueproduct;
+
+            var ProductValue = pi.GetById(id);
+            return View(ProductValue);
+        }
+        [HttpPost]
+        public ActionResult EditProduct(ProductInfo p)
+        {
+            pi.ProductInfoUpdate(p);
+            return RedirectToAction("Index");
+
         }
     }
 }

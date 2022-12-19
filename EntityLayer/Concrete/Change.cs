@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int ConvertID { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> Amount { get; set; }
+        
         public Nullable<System.DateTime> ProccesDate { get; set; }
 
         public virtual Login Login { get; set; }
