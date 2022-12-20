@@ -17,7 +17,8 @@ namespace RecycleCoinProject.Controllers
 
         ProductInfoMenager pi = new ProductInfoMenager(new EfProductInfoDal());
        ProductTypeMenager pt = new ProductTypeMenager(new EfProductTypeDal());
-        
+
+        [Authorize]
         public ActionResult Index()
         {
             var productinfovalues = pi.GetProductInfoList();
