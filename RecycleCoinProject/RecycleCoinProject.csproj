@@ -140,6 +140,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1996,6 +1997,13 @@
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="AdminLTE-3.0.4\starter.html" />
+    <Content Include="AdminLTE-3.0.4\web2\images\ahsap.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\karton.png" />
+    <Content Include="AdminLTE-3.0.4\web2\images\nylon.jpeg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\plastik.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\banner.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\camatık.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\metal.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -2360,6 +2368,47 @@
     <Content Include="AdminLTE-3.0.4\login-form-19\scss\bootstrap\_utilities.scss" />
     <Content Include="AdminLTE-3.0.4\login-form-19\scss\bootstrap\_variables.scss" />
     <Content Include="AdminLTE-3.0.4\login-form-19\scss\style.scss" />
+    <Content Include="AdminLTE-3.0.4\web2\css\aos-animation.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\aos.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\bootstrap.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\fontawesome-all.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\roadmap.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\simpleLightbox.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\snow.css" />
+    <Content Include="AdminLTE-3.0.4\web2\css\style.css" />
+    <Content Include="AdminLTE-3.0.4\web2\images\close.png" />
+    <Content Include="AdminLTE-3.0.4\web2\images\contact.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\exp.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g1.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g2.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g3.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g4.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g5.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g6.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g7.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g8.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\g9.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\loader.gif" />
+    <Content Include="AdminLTE-3.0.4\web2\images\move_up.png" />
+    <Content Include="AdminLTE-3.0.4\web2\images\next.png" />
+    <Content Include="AdminLTE-3.0.4\web2\images\prev.png" />
+    <Content Include="AdminLTE-3.0.4\web2\images\serve.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\stats.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\images\testimonials.jpg" />
+    <Content Include="AdminLTE-3.0.4\web2\index.html" />
+    <Content Include="AdminLTE-3.0.4\web2\js\aos.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\bootstrap.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\easing.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\jquery-2.2.3.min.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\jquery.countup.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\jquery.roadmap.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\jquery.waypoints.min.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\move-top.js" />
+    <Content Include="AdminLTE-3.0.4\web2\js\simpleLightbox.js" />
+    <Content Include="AdminLTE-3.0.4\web2\w3layouts-license.txt" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-brands-400.svg" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-regular-400.svg" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.svg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2393,10 +2442,24 @@
     <Content Include="Views\Product\AddProduct.cshtml" />
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-brands-400.eot" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-brands-400.ttf" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-brands-400.woff" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-brands-400.woff2" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-regular-400.eot" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-regular-400.ttf" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-regular-400.woff" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-regular-400.woff2" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.eot" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.ttf" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.woff" />
+    <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Home\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
