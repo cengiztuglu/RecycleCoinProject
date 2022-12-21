@@ -39,7 +39,8 @@ namespace RecycleCoinProject.Controllers
         public ActionResult HomePage(Login p)
         {
             Context c = new Context();
-            var adminuserinfo = c.Logins.FirstOrDefault(x => x.Email == p.Email && x.Password == p.Password);
+            var adminuserinfo = c.Logins.FirstOrDefault(x => x.Email == p.Email && x.Password == p.Password && x.UserTypeID==1);
+            var userinfo = c.Logins.FirstOrDefault(x => x.Email == p.Email && x.Password == p.Password && x.UserTypeID == 2);
             if (adminuserinfo != null)
             {
                 FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
@@ -51,6 +52,20 @@ namespace RecycleCoinProject.Controllers
             {
 
             }
+
+            if (userinfo != null)
+            {
+               
+
+                return RedirectToAction("Index", "User");
+            }
+            else
+            {
+
+            }
+
+
+
             return View();
         }
     }

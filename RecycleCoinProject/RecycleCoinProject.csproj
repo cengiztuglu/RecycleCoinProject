@@ -2455,11 +2455,11 @@
     <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.woff" />
     <Content Include="AdminLTE-3.0.4\web2\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
