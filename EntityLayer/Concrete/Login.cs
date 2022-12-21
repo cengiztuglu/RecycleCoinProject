@@ -33,6 +33,7 @@ namespace EntityLayer.Concrete
         public int UserID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; }
         public Nullable<int> UserTypeID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -43,6 +44,8 @@ namespace EntityLayer.Concrete
         public virtual ICollection<UserInfo> UserInfos { get; set; }
 
         public virtual ICollection<Wallet> Wallets { get; set; }
+
+
 
 
     }
