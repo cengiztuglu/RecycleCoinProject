@@ -1,8 +1,11 @@
-﻿using System;
+﻿using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace RecycleCoinProject.Controllers
 {
@@ -27,8 +30,27 @@ namespace RecycleCoinProject.Controllers
             return View();
         }
         [AllowAnonymous]
+        [HttpGet]
         public ActionResult HomePage()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult HomePage(Login p)
+        {
+            Context c = new Context();
+            var adminuserinfo = c.Logins.FirstOrDefault(x => x.Email == p.Email && x.Password == p.Password);
+            if (adminuserinfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
+                Session["Email"] = adminuserinfo.Email;
+
+                return RedirectToAction("Index", "Product");
+            }
+            else
+            {
+
+            }
             return View();
         }
     }
