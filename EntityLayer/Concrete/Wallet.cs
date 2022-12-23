@@ -15,6 +15,8 @@ namespace EntityLayer.Concrete
 
         public int? totalCarbon { get; set; }
 
+        public int  RcBalance { get; set; }
+
         public virtual ICollection<Login> Logins { get; set; }
 
     }

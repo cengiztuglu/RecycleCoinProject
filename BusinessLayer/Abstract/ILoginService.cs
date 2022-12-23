@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstact
 {
-    internal interface ILoginService
+    public interface ILoginService
     {
+
     }
 }

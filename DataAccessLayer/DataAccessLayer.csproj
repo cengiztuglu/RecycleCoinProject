@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202212210002087_Role.designer.cs">
       <DependentUpon>202212210002087_Role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212232127227_balance.cs" />
+    <Compile Include="Migrations\202212232127227_balance.designer.cs">
+      <DependentUpon>202212232127227_balance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212232140285_rcbalance.cs" />
+    <Compile Include="Migrations\202212232140285_rcbalance.designer.cs">
+      <DependentUpon>202212232140285_rcbalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,6 +98,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212210002087_Role.resx">
       <DependentUpon>202212210002087_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212232127227_balance.resx">
+      <DependentUpon>202212232127227_balance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212232140285_rcbalance.resx">
+      <DependentUpon>202212232140285_rcbalance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

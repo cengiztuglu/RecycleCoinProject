@@ -74,5 +74,17 @@ namespace RecycleCoinProject.Controllers
         }
 
 
+
+
+        [HttpGet]
+        public ActionResult CuzdanUser(int id)
+        {
+            var uservalue = ui.GetById(id);
+
+            return View(uservalue);
+
+        }
+
+
     }
 }

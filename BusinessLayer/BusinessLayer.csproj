@@ -67,9 +67,11 @@
     <Compile Include="Abstract\IProductInfoService.cs" />
     <Compile Include="Abstract\IProductTypeService.cs" />
     <Compile Include="Abstract\IUserInfoService.cs" />
+    <Compile Include="Abstract\IWalletService.cs" />
     <Compile Include="Concrete\ProductInfoMenager.cs" />
     <Compile Include="Concrete\ProductTypeMenager.cs" />
     <Compile Include="Concrete\UserInfoMenager.cs" />
+    <Compile Include="Concrete\WalletMenager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\ProductInfoValidatior.cs" />
     <Compile Include="ValidationRules\UserInfoValidatior.cs" />
