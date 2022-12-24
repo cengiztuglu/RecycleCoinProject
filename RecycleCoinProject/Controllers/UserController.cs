@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +11,12 @@ namespace RecycleCoinProject.Controllers
     public class UserController : Controller
     {
         // GET: User
+       
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
+           
         }
     }
 }

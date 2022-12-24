@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,9 @@ namespace RecycleCoinProject.Controllers
 {
     public class LoginController : Controller
     {
+
+        AdminLoginMenager alm = new AdminLoginMenager(new EfLoginDal());
+       
         // GET: Login
         [HttpGet]
         public ActionResult Index()
@@ -20,8 +25,7 @@ namespace RecycleCoinProject.Controllers
         [HttpPost]
         public ActionResult Index(Login P)
         {
-            Context c = new Context();
-            var adminuserinfo = c.Logins.FirstOrDefault(x => x.Email == P.Email && x.Password == P.Password);
+            var adminuserinfo = alm.GetLogin(P.Email, P.Password, Convert.ToInt32(P.UserTypeID));
             if (adminuserinfo!=null)
             {
                 FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
@@ -29,11 +33,13 @@ namespace RecycleCoinProject.Controllers
 
                 return RedirectToAction("Index", "Product");
             }
-            else
-            {
-                
-            }
+         
+      
             return View();
         }
+
+      
+
+
     }
 }

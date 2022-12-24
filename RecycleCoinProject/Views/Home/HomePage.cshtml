@@ -1,4 +1,5 @@
-﻿
+﻿@using EntityLayer.Concrete;
+@model List<Login>
 @{
     Layout = null;
 }
@@ -20,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta charset="UTF-8" />
     <meta name="keywords" content="RCYCLECOIN Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script>
-        addEventListener("load", function() {
+        addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
 
@@ -372,7 +373,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                   
+
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
                         <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web2/images/g8.jpg">
                             <div class="section_1_gallery_grid1">
@@ -383,7 +384,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                         </a>
                     </div>
-                    
+
                 </div>
 
                 <!--end portfolio-area -->
@@ -692,143 +693,143 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         {
                             <div class="form-group">
                                 <label class="mb-2">Email address</label>
-                                <input type="email" class="form-control" name="Email"  aria-describedby="emailHelp" placeholder="Email" required>
+                                <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Email" required>
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label class="mb-2">Password</label>
-                                <input type="password" class="form-control" name="password"  placeholder="password" required>
+                                <input type="password" class="form-control" name="password" placeholder="password" required>
                             </div>
                             <div class="form-check mb-2">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
-                            <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+                            <button type="submit" class="btn btn-primary submit mb-4" >Sign In</button>
                             <p class="text-center pb-4">
                                 <a href="#" data-toggle="modal" data-target="#exampleModalCenter2"> Don't have an account?</a>
                             </p>
                         }
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
-    <!--//Login-->
-    <!--/Register-->
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="login px-4 mx-auto mw-100">
-                        <h5 class="text-center mb-4">Register Now</h5>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label>First name</label>
-
-                                <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Last name</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="mb-2">Password</label>
-                                <input type="password" class="form-control" id="password1" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" class="form-control" id="password2" placeholder="" required="">
-                            </div>
-
-                            <button type="submit" class="btn btn-primary submit mb-4">Register</button>
-                            <p class="text-center pb-4">
-                                <a href="#">By clicking Register, I agree to your terms</a>
-                            </p>
-                        </form>
-
+        <!--//Login-->
+        <!--/Register-->
+        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
+                    <div class="modal-body">
+                        <div class="login px-4 mx-auto mw-100">
+                            <h5 class="text-center mb-4">Register Now</h5>
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <label>First name</label>
 
+                                    <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mb-2">Password</label>
+                                    <input type="password" class="form-control" id="password1" placeholder="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control" id="password2" placeholder="" required="">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary submit mb-4">Register</button>
+                                <p class="text-center pb-4">
+                                    <a href="#">By clicking Register, I agree to your terms</a>
+                                </p>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    <!--//Register-->
+        <!--//Register-->
 
-    <script src="~/AdminLTE-3.0.4/web2/js/jquery-2.2.3.min.js"></script>
-    <!-- banner-type-text -->
-    <script src='~/AdminLTE-3.0.4/web2/js/aos.js'></script>
-    <script>
-        AOS.init({
-            easing: 'ease-out-back',
-            duration: 1000
-        });
-
-    </script>
-    <!-- sticky nav bar-->
-    <script>
-        $(() => {
-
-            //On Scroll Functionality
-            $(window).scroll(() => {
-                var windowTop = $(window).scrollTop();
-                windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
-                windowTop > 100 ? $('ul.nav-honey').css('top', '50px') : $('ul.nav-honey').css('top', '160px');
+        <script src="~/AdminLTE-3.0.4/web2/js/jquery-2.2.3.min.js"></script>
+        <!-- banner-type-text -->
+        <script src='~/AdminLTE-3.0.4/web2/js/aos.js'></script>
+        <script>
+            AOS.init({
+                easing: 'ease-out-back',
+                duration: 1000
             });
 
-            //Click Logo To Scroll To Top
-            $('#logo').on('click', () => {
-                $('html,body').animate({
-                    scrollTop: 0
-                }, 500);
-            });
+        </script>
+        <!-- sticky nav bar-->
+        <script>
+            $(() => {
 
-            //            //Smooth Scrolling Using Navigation Menu
-            //            $('a[href*="#"]').on('click', function(e) {
-            //                $('html,body').animate({
-            //                    scrollTop: $($(this).attr('href')).offset().top - 100
-            //                }, 500);
-            //                e.preventDefault();
-            //            });
-
-            //Toggle Menu
-            $('#menu-toggle').on('click', () => {
-                $('#menu-toggle').toggleClass('closeMenu');
-                $('ul').toggleClass('showMenu');
-
-                $('li').on('click', () => {
-                    $('ul').removeClass('showMenu');
-                    $('#menu-toggle').removeClass('closeMenu');
+                //On Scroll Functionality
+                $(window).scroll(() => {
+                    var windowTop = $(window).scrollTop();
+                    windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+                    windowTop > 100 ? $('ul.nav-honey').css('top', '50px') : $('ul.nav-honey').css('top', '160px');
                 });
+
+                //Click Logo To Scroll To Top
+                $('#logo').on('click', () => {
+                    $('html,body').animate({
+                        scrollTop: 0
+                    }, 500);
+                });
+
+                //            //Smooth Scrolling Using Navigation Menu
+                //            $('a[href*="#"]').on('click', function(e) {
+                //                $('html,body').animate({
+                //                    scrollTop: $($(this).attr('href')).offset().top - 100
+                //                }, 500);
+                //                e.preventDefault();
+                //            });
+
+                //Toggle Menu
+                $('#menu-toggle').on('click', () => {
+                    $('#menu-toggle').toggleClass('closeMenu');
+                    $('ul').toggleClass('showMenu');
+
+                    $('li').on('click', () => {
+                        $('ul').removeClass('showMenu');
+                        $('#menu-toggle').removeClass('closeMenu');
+                    });
+                });
+
             });
 
-        });
+        </script>
+        <!-- //sticky nav bar -->
+        <!-- Include jQuery Timeline Plugin -->
+        <script src="~/AdminLTE-3.0.4/web2/js/jquery.roadmap.js"></script>
 
-    </script>
-    <!-- //sticky nav bar -->
-    <!-- Include jQuery Timeline Plugin -->
-    <script src="~/AdminLTE-3.0.4/web2/js/jquery.roadmap.js"></script>
+        <script>
+            $(document).ready(function () {
 
-    <script>
-        $(document).ready(function() {
-
-            var events = [{
+                var events = [{
                     date: 'Oct 2018 - Present',
                     content: 'Recycle Coin <small>Co-founder</small>'
                 },
                 {
                     date: '2016 - 2018'
-                    content: 'Recycle Coin '
+                            content: 'Recycle Coin '
                 }
-                {
+                        {
                     date: '2013 - 2016'
-                    content: 'Recycle Coin '
+                            content: 'Recycle Coin '
                 },
                 {
                     date: '2012 - 2013',
@@ -868,70 +869,70 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     date: '2001 - 2003',
                     content: 'Lorem IPsum  <small>Add Description</small>'
                 }
-            ];
+                ];
 
-            $('#my-timeline').roadmap(events, {
-                eventsPerSlide: 6,
-                slide: 1,
-                prevArrow: '<i class="fas fa-chevron-left"></i>',
-                nextArrow: '<i class="fas fa-chevron-right"></i>'
-            });
-        });
-
-    </script>
-    <!-- simpleLightbox -->
-    <script src="~/AdminLTE-3.0.4/web2/js/simpleLightbox.js"></script>
-    <script>
-        $('.proj_gallery_grid a').simpleLightbox();
-
-    </script>
-    <!-- //simpleLightbox -->
-    <!-- stats -->
-    <script src="~/AdminLTE-3.0.4/web2/js/jquery.waypoints.min.js"></script>
-    <script src="~/AdminLTE-3.0.4/web2/js/jquery.countup.js"></script>
-    <script>
-        $('.counter').countUp();
-
-    </script>
-    <!-- //stats -->
-    <!--/ start-smoth-scrolling -->
-    <script src="~/AdminLTE-3.0.4/web2/js/move-top.js"></script>
-    <script src="~/AdminLTE-3.0.4/web2/js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event) {
-                event.preventDefault();
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 900);
-            });
-        });
-
-    </script>
-    <script>
-        $(document).ready(function() {
-            /*
-            						var defaults = {
-            							  containerID: 'toTop', // fading element id
-            							containerHoverID: 'toTopHover', // fading element hover id
-            							scrollSpeed: 1200,
-            							easingType: 'linear'
-            						 };
-            						*/
-
-            $().UItoTop({
-                easingType: 'easeOutQuart'
+                $('#my-timeline').roadmap(events, {
+                    eventsPerSlide: 6,
+                    slide: 1,
+                    prevArrow: '<i class="fas fa-chevron-left"></i>',
+                    nextArrow: '<i class="fas fa-chevron-right"></i>'
+                });
             });
 
-        });
+        </script>
+        <!-- simpleLightbox -->
+        <script src="~/AdminLTE-3.0.4/web2/js/simpleLightbox.js"></script>
+        <script>
+            $('.proj_gallery_grid a').simpleLightbox();
 
-    </script>
-    <!--// end-smoth-scrolling -->
-    <!-- //js -->
+        </script>
+        <!-- //simpleLightbox -->
+        <!-- stats -->
+        <script src="~/AdminLTE-3.0.4/web2/js/jquery.waypoints.min.js"></script>
+        <script src="~/AdminLTE-3.0.4/web2/js/jquery.countup.js"></script>
+        <script>
+            $('.counter').countUp();
 
-    <script src="~/AdminLTE-3.0.4/web2/js/bootstrap.js"></script>
+        </script>
+        <!-- //stats -->
+        <!--/ start-smoth-scrolling -->
+        <script src="~/AdminLTE-3.0.4/web2/js/move-top.js"></script>
+        <script src="~/AdminLTE-3.0.4/web2/js/easing.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 900);
+                });
+            });
 
-</body>
+        </script>
+        <script>
+            $(document).ready(function () {
+                /*
+                                        var defaults = {
+                                              containerID: 'toTop', // fading element id
+                                            containerHoverID: 'toTopHover', // fading element hover id
+                                            scrollSpeed: 1200,
+                                            easingType: 'linear'
+                                         };
+                                        */
+
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+
+            });
+
+        </script>
+        <!--// end-smoth-scrolling -->
+        <!-- //js -->
+
+        <script src="~/AdminLTE-3.0.4/web2/js/bootstrap.js"></script>
+
+    </body>
 
 </html>
 

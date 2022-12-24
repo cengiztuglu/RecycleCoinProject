@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -30,6 +32,7 @@ namespace RecycleCoinProject.Controllers
 
             return View();
         }
+        UserLoginMenager ulm = new UserLoginMenager(new EfLoginDal());
         [AllowAnonymous]
         [HttpGet]
         public ActionResult HomePage()
@@ -39,35 +42,20 @@ namespace RecycleCoinProject.Controllers
         [HttpPost]
         public ActionResult HomePage(Login p)
         {
-            Context c = new Context();
-            var adminuserinfo = c.Logins.FirstOrDefault(x => x.Email == p.Email && x.Password == p.Password && x.UserTypeID==1);
-            var userinfo = c.Logins.FirstOrDefault(x => x.Email == p.Email && x.Password == p.Password && x.UserTypeID == 2);
-            if (adminuserinfo != null)
-            {
-                FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
-                Session["Email"] = adminuserinfo.Email;
+          
+           
+                var adminuserinfo = ulm.GetUserLogin(p.Email, p.Password, Convert.ToInt32(p.UserTypeID));
+                if (adminuserinfo != null)
+                {
+                    FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
+                    Session["Email"] = adminuserinfo.Email;
 
-                return RedirectToAction("Index", "Product");
-            }
-            else
-            {
-
-            }
-
-            if (userinfo != null)
-            {
-               
-
-                return RedirectToAction("Index", "User");
-            }
-            else
-            {
-
-            }
+                    return RedirectToAction("Index", "User");
+                }
 
 
-
-            return View();
+                return View();
+            
         }
     }
 }
