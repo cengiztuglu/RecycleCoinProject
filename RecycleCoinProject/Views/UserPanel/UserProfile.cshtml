@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.UserInfo
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@Html.AntiForgeryToken()
+@using (Html.BeginForm("UserProfile", "UserPanel", FormMethod.Post))
+{
+   
+    <div class="form-group">
+        @* @Html.Label("Kullanici ID")*@
+        @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanici Adı")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Kullanici SoyAd")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        <br />
+        @Html.Label("Telefon No")
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+
+    </div>
+}

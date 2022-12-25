@@ -58,6 +58,7 @@
     <Compile Include="Concrete\ProductInfo.cs" />
     <Compile Include="Concrete\ProductType.cs" />
     <Compile Include="Concrete\UserInfo.cs" />
+    <Compile Include="Concrete\UserProduct.cs" />
     <Compile Include="Concrete\User_Type.cs" />
     <Compile Include="Concrete\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Abstact
+namespace BusinessLayer.Abstract
 {
-    public interface IUserInfoService
+    public interface IUserService
     {
         List<UserInfo> GetUserInfoList();
         void UserInfoAdd(UserInfo userInfo);

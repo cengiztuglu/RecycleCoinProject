@@ -42,20 +42,25 @@ namespace RecycleCoinProject.Controllers
         [HttpPost]
         public ActionResult HomePage(Login p)
         {
-          
-           
-                var adminuserinfo = ulm.GetUserLogin(p.Email, p.Password, Convert.ToInt32(p.UserTypeID));
-                if (adminuserinfo != null)
-                {
-                    FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
-                    Session["Email"] = adminuserinfo.Email;
 
-                    return RedirectToAction("Index", "User");
-                }
+
+            var adminuserinfo = ulm.GetUserLogin(p.Email, p.Password, Convert.ToInt32(p.UserTypeID));
+            if (adminuserinfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(adminuserinfo.Email, false);//yetki verme işlemleri
+                Session["Email"] = adminuserinfo.Email;
+
+                return RedirectToAction("UserProfile", "UserPanel");
+            }
+            else
+            {
+
+                { }
 
 
                 return View();
-            
+
+            }
         }
     }
 }
