@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IChangeDal.cs" />
     <Compile Include="Abstract\ILoginDal.cs" />
+    <Compile Include="Abstract\IUserProductDal.cs" />
     <Compile Include="Abstract\IPendigTransactionDal.cs" />
     <Compile Include="Abstract\IProccesDal.cs" />
     <Compile Include="Abstract\IProductInfoDal.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="EntityFramework\EfProductInfoDal.cs" />
     <Compile Include="EntityFramework\EfProductTypeDal.cs" />
     <Compile Include="EntityFramework\EfUserInfoDal.cs" />
+    <Compile Include="EntityFramework\EfUserProductDal.cs" />
     <Compile Include="EntityFramework\EfWalletDal.cs" />
     <Compile Include="Migrations\202212210002087_Role.cs" />
     <Compile Include="Migrations\202212210002087_Role.designer.cs">
@@ -81,6 +83,14 @@
     <Compile Include="Migrations\202212232140285_rcbalance.cs" />
     <Compile Include="Migrations\202212232140285_rcbalance.designer.cs">
       <DependentUpon>202212232140285_rcbalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212250240586_userproduct.cs" />
+    <Compile Include="Migrations\202212250240586_userproduct.designer.cs">
+      <DependentUpon>202212250240586_userproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212250254566_s.cs" />
+    <Compile Include="Migrations\202212250254566_s.designer.cs">
+      <DependentUpon>202212250254566_s.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212232140285_rcbalance.resx">
       <DependentUpon>202212232140285_rcbalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212250240586_userproduct.resx">
+      <DependentUpon>202212250240586_userproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212250254566_s.resx">
+      <DependentUpon>202212250254566_s.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,6 +16,7 @@ namespace EntityLayer.Concrete
         public Nullable<int> ProductCarbon { get; set; }
         public bool ProductStatus { get; set; }
         public virtual ProductType productType { get; set; }
+        public virtual UserProduct userProduct { get; set; }
 
     }
 }

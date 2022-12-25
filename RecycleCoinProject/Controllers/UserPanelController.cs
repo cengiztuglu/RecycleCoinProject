@@ -57,5 +57,73 @@ namespace RecycleCoinProject.Controllers
 
         }
 
+
+
+
+/*
+        [HttpGet]
+        public ActionResult UserProductExchange(int id = 0)
+
+        {
+
+            string p = (string)Session["Email"];
+            TempData["var"] = p;
+            id = c.Logins.Where(x => x.Email == p).Select(y =>
+            y.UserID).FirstOrDefault();
+
+            var uservalue = um.GetById(id);
+
+
+            return View(uservalue);
+        }
+
+        [HttpPost]
+        public ActionResult UserProfile(UserInfo p)
+        {
+            UserInfoValidatior userInfoValidatior = new UserInfoValidatior();
+            ValidationResult results = userInfoValidatior.Validate(p);
+            if (results.IsValid)
+            {
+                um.UserInfoUpdate(p);
+                return RedirectToAction("UserProfile");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+
+        }
+*///
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
