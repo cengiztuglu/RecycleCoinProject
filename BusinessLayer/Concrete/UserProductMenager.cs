@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
 
         public void UserProductAdd(UserProduct userProduct)
         {
-            throw new NotImplementedException();
+            _userProductDal.Insert(userProduct);
         }
 
         public void UserProductDelete(UserProduct userProduct)

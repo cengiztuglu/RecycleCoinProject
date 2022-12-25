@@ -4,25 +4,25 @@
     ViewBag.Title = "UserProductExchange";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-
+<h1></h1>
 @Html.AntiForgeryToken()
 @using (Html.BeginForm("UserProductExchange", "UserPanel", FormMethod.Post))
 {
 
     <div class="form-group">
-        @* @Html.Label("Kullanici ID")*@
-        @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+       
         <br />
         @Html.Label("Kullanici Adı")
-      
+        @Html.DropDownListFor(x => x.ProductBalance, (List<SelectListItem>)ViewBag.pi, new { @class = "form-control" })
+
         <br />
 
-       
-         
-       
+
+
+
         <br />
 
-        
+
         <button class="btn btn-success">Dönüştür</button>
 
 

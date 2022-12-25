@@ -72,9 +72,9 @@
     <Compile Include="EntityFramework\EfUserInfoDal.cs" />
     <Compile Include="EntityFramework\EfUserProductDal.cs" />
     <Compile Include="EntityFramework\EfWalletDal.cs" />
-    <Compile Include="Migrations\202212251509175_sasa.cs" />
-    <Compile Include="Migrations\202212251509175_sasa.designer.cs">
-      <DependentUpon>202212251509175_sasa.cs</DependentUpon>
+    <Compile Include="Migrations\202212251525088_sasa.cs" />
+    <Compile Include="Migrations\202212251525088_sasa.designer.cs">
+      <DependentUpon>202212251525088_sasa.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,8 +90,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212251509175_sasa.resx">
-      <DependentUpon>202212251509175_sasa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212251525088_sasa.resx">
+      <DependentUpon>202212251525088_sasa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

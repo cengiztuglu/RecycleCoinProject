@@ -17,7 +17,7 @@ namespace RecycleCoinProject.Controllers
     {
         // GET: User
 
-        UserMenager um = new UserMenager(new EfUserInfoDal());
+        UserInfoMenager um = new UserInfoMenager(new EfUserInfoDal());
         UserProductMenager upm = new UserProductMenager(new EfUserProductDal());
         ProductInfoMenager pi = new ProductInfoMenager(new EfProductInfoDal());
         ProductTypeMenager pt = new ProductTypeMenager(new EfProductTypeDal());
@@ -66,19 +66,14 @@ namespace RecycleCoinProject.Controllers
 
 
         [HttpGet]
-        public ActionResult UserProductExchange(int id = 0)
+        public ActionResult UserProductExchange()
 
         {
 
 
          
 
-            string p = (string)Session["Email"];
-            id = c.Logins.Where(x => x.Email == p).Select(y =>
-            y.UserID).FirstOrDefault();
-
-            var uservalue = upm.GetById(id);
-
+          
 
           
           
@@ -86,20 +81,26 @@ namespace RecycleCoinProject.Controllers
                                                  select new SelectListItem
                                                  {
                                                      Text = x.ProductName,
-                                                     Value = x.ProductID.ToString()
+                                                     Value = x.ProductCarbon.ToString()
 
                                                  }).ToList();
             ViewBag.pi = valueproduct;
            
 
-            return View(uservalue);
+            return View();
         }
 
         [HttpPost]
         public ActionResult UserProductExchange(UserProduct p)
         {
 
-         
+            string mailinfo = (string)Session["Email"];
+            var id = c.Logins.Where(x => x.Email == mailinfo).Select(y =>
+            y.UserID).FirstOrDefault();
+
+
+            ViewBag.p = id;
+            p.UserID = id;
 
 
 
