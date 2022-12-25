@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.UserProduct
+ 
+@{
+    ViewBag.Title = "UserProductExchange";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+@using (Html.BeginForm("UserProductExchange", "UserPanel", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @* @Html.Label("Kullanici ID")*@
+        @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanici Adı")
+      
+        <br />
+
+       
+         
+       
+        <br />
+
+        
+        <button class="btn btn-success">Dönüştür</button>
+
+
+
+    </div>
+}

@@ -28,7 +28,7 @@ namespace EntityLayer.Concrete
         {
             this.Changes = new HashSet<Change>();
             this.Procs = new HashSet<Proc>();
-            this.UserProducts = new HashSet<UserProduct>();
+        
             
         }
         [Key]
@@ -44,7 +44,7 @@ namespace EntityLayer.Concrete
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Proc> Procs { get; set; }
         public virtual ICollection<UserInfo> UserInfos { get; set; }
-        public virtual ICollection<UserProduct> UserProducts { get; set; }
+    
         public virtual ICollection<Wallet> Wallets { get; set; }
 
 

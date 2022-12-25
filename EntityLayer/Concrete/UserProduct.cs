@@ -9,17 +9,16 @@ namespace EntityLayer.Concrete
 {
     public class UserProduct
     {
-
         [Key]
-        public int UserID { get; set; }
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public int ProductCarbonBalance{ get; set; }
-       
-        public Nullable<int> ProductTypeID { get; set; }
-       public virtual Login Login { get; set; }
-        public virtual ICollection<ProductInfo> ProductInfos { get; set; }
+        public int ConvertID { get; set; }
+        public int UserID { get; set; }  
+        public int ProductBalance { get; set; }
 
 
+
+
+
+        
+      
     }
 }

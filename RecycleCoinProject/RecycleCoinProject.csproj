@@ -2460,6 +2460,7 @@
     <Content Include="Views\Wallet\Index.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\UserPanel\UserProfile.cshtml" />
+    <Content Include="Views\UserPanel\UserProductExchange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

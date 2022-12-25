@@ -9,6 +9,7 @@ using EntityLayer.Concrete;
 using DataAccessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
+using FluentValidation;
 
 namespace RecycleCoinProject.Controllers
 {
@@ -17,6 +18,9 @@ namespace RecycleCoinProject.Controllers
         // GET: User
 
         UserMenager um = new UserMenager(new EfUserInfoDal());
+        UserProductMenager upm = new UserProductMenager(new EfUserProductDal());
+        ProductInfoMenager pi = new ProductInfoMenager(new EfProductInfoDal());
+        ProductTypeMenager pt = new ProductTypeMenager(new EfProductTypeDal());
         Context c = new Context();
 
         [HttpGet]
@@ -60,32 +64,54 @@ namespace RecycleCoinProject.Controllers
 
 
 
-/*
+
         [HttpGet]
         public ActionResult UserProductExchange(int id = 0)
 
         {
 
+
+         
+
             string p = (string)Session["Email"];
-            TempData["var"] = p;
             id = c.Logins.Where(x => x.Email == p).Select(y =>
             y.UserID).FirstOrDefault();
 
-            var uservalue = um.GetById(id);
+            var uservalue = upm.GetById(id);
 
+
+          
+          
+            List<SelectListItem> valueproduct = (from x in pi.GetProductInfoList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.ProductName,
+                                                     Value = x.ProductID.ToString()
+
+                                                 }).ToList();
+            ViewBag.pi = valueproduct;
+           
 
             return View(uservalue);
         }
 
         [HttpPost]
-        public ActionResult UserProfile(UserInfo p)
+        public ActionResult UserProductExchange(UserProduct p)
         {
-            UserInfoValidatior userInfoValidatior = new UserInfoValidatior();
-            ValidationResult results = userInfoValidatior.Validate(p);
+
+         
+
+
+
+
+
+            UserProductValidatior userproductvalidatior = new UserProductValidatior();
+        
+            ValidationResult results =userproductvalidatior.Validate(p);
             if (results.IsValid)
             {
-                um.UserInfoUpdate(p);
-                return RedirectToAction("UserProfile");
+               upm.UserProductAdd(p);
+                return RedirectToAction("UserProductExchange");
             }
             else
             {
@@ -98,7 +124,7 @@ namespace RecycleCoinProject.Controllers
             return View();
 
         }
-*///
+
 
 
 

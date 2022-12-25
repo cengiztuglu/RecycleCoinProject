@@ -23,25 +23,27 @@ namespace BusinessLayer.Concrete
             return _userProductDal.Get(x => x.UserID == id);
         }
 
-        public List<UserProduct> GetUserInfoList()
+        public List<UserProduct> GetUserProductList()
         {
           return  _userProductDal.List();
         }
 
-        public void UserInfoAdd(UserProduct userProduct)
-        {
 
-            _userProductDal.Insert(userProduct);
+       
+
+        public void UserProductAdd(UserProduct userProduct)
+        {
+            throw new NotImplementedException();
         }
 
-        public void UserInfoDelete(UserProduct userProduct)
+        public void UserProductDelete(UserProduct userProduct)
         {
-            _userProductDal.Delete(userProduct);
+            throw new NotImplementedException();
         }
 
-        public void UserInfoUpdate(UserProduct userProduct)
+        public void UserProductUpdate(UserProduct userProduct)
         {
-            _userProductDal.Update(userProduct);
+            throw new NotImplementedException();
         }
     }
 }
