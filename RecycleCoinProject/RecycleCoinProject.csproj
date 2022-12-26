@@ -147,6 +147,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
+    <Compile Include="ViewModel\UserInfoAndProductInfoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\.gitignore" />
@@ -2461,6 +2462,7 @@
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\UserPanel\UserProfile.cshtml" />
     <Content Include="Views\UserPanel\UserProductExchange.cshtml" />
+    <Content Include="Views\UserPanel\SumCarbon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

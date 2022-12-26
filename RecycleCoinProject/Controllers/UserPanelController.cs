@@ -10,6 +10,7 @@ using DataAccessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
 using FluentValidation;
+using RecycleCoinProject.ViewModel;
 
 namespace RecycleCoinProject.Controllers
 {
@@ -32,10 +33,7 @@ namespace RecycleCoinProject.Controllers
             TempData["var"] = p;
             id = c.Logins.Where(x => x.Email == p).Select(y =>
             y.UserID).FirstOrDefault();
-
             var uservalue = um.GetById(id);
-           
-           
             return View(uservalue);
         }
      
@@ -66,17 +64,16 @@ namespace RecycleCoinProject.Controllers
 
 
         [HttpGet]
-        public ActionResult UserProductExchange()
+        public ActionResult UserProductExchange(int id=0)
 
         {
+            string p = (string)Session["Email"];
+            TempData["var"] = p;
+            id = c.Logins.Where(x => x.Email == p).Select(y =>
+            y.UserID).FirstOrDefault();
+            var uservalue = um.GetById(id);
+            
 
-
-         
-
-          
-
-          
-          
             List<SelectListItem> valueproduct = (from x in pi.GetProductInfoList()
                                                  select new SelectListItem
                                                  {
@@ -85,33 +82,49 @@ namespace RecycleCoinProject.Controllers
 
                                                  }).ToList();
             ViewBag.pi = valueproduct;
-           
+            UserInfoAndProductInfoViewModel productInfoViewModel = new UserInfoAndProductInfoViewModel();
 
-            return View();
+            return View(productInfoViewModel);
+
+            
         }
 
         [HttpPost]
-        public ActionResult UserProductExchange(UserProduct p)
+        public ActionResult UserProductExchange(UserInfoAndProductInfoViewModel userInfoProduct)
         {
 
             string mailinfo = (string)Session["Email"];
             var id = c.Logins.Where(x => x.Email == mailinfo).Select(y =>
             y.UserID).FirstOrDefault();
 
+            var deger = um.GetById(id);
+
+            UserProduct userProduct = new UserProduct();
+            userProduct.UserID = id;
+            userProduct.ProductBalance= (int)userInfoProduct.ProductInfo.ProductCarbon;
+            upm.UserProductAdd(userProduct);
+
+            deger.Balance += (int)userInfoProduct.ProductInfo.ProductCarbon;
+            //deger.Name = userInfoProduct.UserInfo.Name;
+            //deger.PhoneNumber = userInfoProduct.UserInfo.PhoneNumber;
+            //deger.Surname = userInfoProduct.UserInfo.Surname;
+            //deger.Sha256 = userInfoProduct.UserInfo.Sha256;
+
+            um.UserInfoUpdate(deger);
 
             ViewBag.p = id;
-            p.UserID = id;
-
-
+            ViewBag.a = id;
+            //userProduct.UserID = id;
 
 
 
             UserProductValidatior userproductvalidatior = new UserProductValidatior();
         
-            ValidationResult results =userproductvalidatior.Validate(p);
+            ValidationResult results =userproductvalidatior.Validate(userProduct);
             if (results.IsValid)
             {
-               upm.UserProductAdd(p);
+               upm.UserProductAdd(userProduct);
+                //um.UserInfoUpdate(a);
                 return RedirectToAction("UserProductExchange");
             }
             else
@@ -122,11 +135,44 @@ namespace RecycleCoinProject.Controllers
                 }
             }
 
-            return View();
+            return RedirectToAction("UserProductExchange");
 
         }
 
 
+
+
+        [HttpGet]
+        public ActionResult SumCarbon(int id = 0)
+
+        {
+            string p = (string)Session["Email"];
+            TempData["var"] = p;
+            id = c.Logins.Where(x => x.Email == p).Select(y =>
+            y.UserID).FirstOrDefault();
+            var uservalue = um.GetById(id);
+            return View(uservalue);
+
+
+
+
+
+
+        }
+        [HttpPost]
+        public ActionResult SumCarbon(UserInfo p)
+
+        {
+           
+
+            
+            p.Balance = 30 ;
+            um.UserInfoUpdate(p);
+
+            return View();
+
+
+        }
 
 
 
