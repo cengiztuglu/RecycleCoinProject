@@ -14,11 +14,14 @@ namespace EntityLayer.Concrete
         public int UserID { get; set; }  
         public int ProductBalance { get; set; }
 
+        public int ProductName { get; set; }
+        public Boolean ProductStatus{ get; set; }
 
 
 
 
-        
-      
+
+
+
     }
 }

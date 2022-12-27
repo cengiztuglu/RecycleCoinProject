@@ -14,12 +14,9 @@
         <br />
         @Html.Label("Kullanici Adı")
         @Html.DropDownListFor(x => x.ProductInfo.ProductCarbon, (List<SelectListItem>)ViewBag.pi, new { @class = "form-control" })
-        @*@Html.TextBoxFor(x => x.UserInfo.UserID)
-        @Html.TextBoxFor(x => x.UserInfo.Name)
-        @Html.TextBoxFor(x => x.UserInfo.PhoneNumber)
-        @Html.TextBoxFor(x => x.UserInfo.Sha256)
-        @Html.TextBoxFor(x => x.UserInfo.Surname)
-        @Html.TextBoxFor(x => x.UserInfo.Balance)*@
+        @Html.Label("Kullanici Adı")
+        @Html.DropDownListFor(x => x.ProductInfo.ProductName, (List<SelectListItem>)ViewBag.pi, new { @class = "form-control" })
+
 
 
         <br />

@@ -76,6 +76,18 @@
     <Compile Include="Migrations\202212251525088_sasa.designer.cs">
       <DependentUpon>202212251525088_sasa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212262204065_productUpdate.cs" />
+    <Compile Include="Migrations\202212262204065_productUpdate.designer.cs">
+      <DependentUpon>202212262204065_productUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212270016240_sha.cs" />
+    <Compile Include="Migrations\202212270016240_sha.designer.cs">
+      <DependentUpon>202212270016240_sha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212270020065_s.cs" />
+    <Compile Include="Migrations\202212270020065_s.designer.cs">
+      <DependentUpon>202212270020065_s.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +104,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212251525088_sasa.resx">
       <DependentUpon>202212251525088_sasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212262204065_productUpdate.resx">
+      <DependentUpon>202212262204065_productUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212270016240_sha.resx">
+      <DependentUpon>202212270016240_sha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212270020065_s.resx">
+      <DependentUpon>202212270020065_s.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

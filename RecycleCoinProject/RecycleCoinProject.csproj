@@ -136,6 +136,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminProductExchangeController.cs" />
     <Compile Include="Controllers\AdminUserInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -2462,7 +2463,7 @@
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\UserPanel\UserProfile.cshtml" />
     <Content Include="Views\UserPanel\UserProductExchange.cshtml" />
-    <Content Include="Views\UserPanel\SumCarbon.cshtml" />
+    <Content Include="Views\AdminProductExchange\UserProductExchange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

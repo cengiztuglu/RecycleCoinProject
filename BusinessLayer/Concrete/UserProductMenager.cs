@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public UserProduct GetById(int id)
         {
-            return _userProductDal.Get(x => x.UserID == id);
+            return _userProductDal.Get(x => x.ConvertID == id);
         }
 
         public List<UserProduct> GetUserProductList()
@@ -38,12 +38,14 @@ namespace BusinessLayer.Concrete
 
         public void UserProductDelete(UserProduct userProduct)
         {
-            throw new NotImplementedException();
+            userProduct.ProductStatus = true;
+            _userProductDal.Update(userProduct);
         }
 
         public void UserProductUpdate(UserProduct userProduct)
         {
-            throw new NotImplementedException();
+            userProduct.ProductStatus = false;
+            _userProductDal.Update(userProduct);
         }
     }
 }

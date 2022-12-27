@@ -105,17 +105,13 @@ namespace RecycleCoinProject.Controllers
             upm.UserProductAdd(userProduct);
 
             deger.Balance += (int)userInfoProduct.ProductInfo.ProductCarbon;
-            //deger.Name = userInfoProduct.UserInfo.Name;
-            //deger.PhoneNumber = userInfoProduct.UserInfo.PhoneNumber;
-            //deger.Surname = userInfoProduct.UserInfo.Surname;
-            //deger.Sha256 = userInfoProduct.UserInfo.Sha256;
+           
 
             um.UserInfoUpdate(deger);
 
             ViewBag.p = id;
             ViewBag.a = id;
-            //userProduct.UserID = id;
-
+            
 
 
             UserProductValidatior userproductvalidatior = new UserProductValidatior();
@@ -124,7 +120,6 @@ namespace RecycleCoinProject.Controllers
             if (results.IsValid)
             {
                upm.UserProductAdd(userProduct);
-                //um.UserInfoUpdate(a);
                 return RedirectToAction("UserProductExchange");
             }
             else
@@ -142,38 +137,7 @@ namespace RecycleCoinProject.Controllers
 
 
 
-        [HttpGet]
-        public ActionResult SumCarbon(int id = 0)
-
-        {
-            string p = (string)Session["Email"];
-            TempData["var"] = p;
-            id = c.Logins.Where(x => x.Email == p).Select(y =>
-            y.UserID).FirstOrDefault();
-            var uservalue = um.GetById(id);
-            return View(uservalue);
-
-
-
-
-
-
-        }
-        [HttpPost]
-        public ActionResult SumCarbon(UserInfo p)
-
-        {
-           
-
-            
-            p.Balance = 30 ;
-            um.UserInfoUpdate(p);
-
-            return View();
-
-
-        }
-
+      
 
 
 

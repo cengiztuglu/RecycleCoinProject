@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace EntityLayer.Concrete
 {
@@ -20,6 +21,7 @@ namespace EntityLayer.Concrete
         public string Sha256 { get; set; }
         public virtual Login Login { get; set; }
         public int Balance { get; set; }
+     
 
     }
 }

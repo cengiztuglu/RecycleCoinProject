@@ -56,12 +56,12 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeviews">
                             <a href="/AdminUserInfo/Index" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
-                                   KULLANICILAR
+                                    KULLANICILAR
                                 </p>
                             </a>
 
@@ -74,6 +74,15 @@ to get the desired effect
                                     <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Dönüştürülen Ürünler
+                                </p>
+                            </a>
+
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -115,16 +124,16 @@ to get the desired effect
                         </li>
                         @if (User.IsInRole("B"))          /* eğer rol b ise göremez*/
                         {
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
-                                <p>
-                                    İletişim & Mesajlar
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-tree"></i>
+                                    <p>
+                                        İletişim & Mesajlar
 
-                                </p>
-                            </a>
+                                    </p>
+                                </a>
 
-                        </li>
+                            </li>
                         }
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">

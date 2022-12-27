@@ -1,0 +1,34 @@
+﻿@using EntityLayer.Concrete
+@model  List<UserProduct>
+    @{
+        ViewBag.Title = "UserProductExchange";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>User Id</th>
+            <th>Product Name</th>
+            <th>ProductBalance</th>
+            <th>transaction Status</th>
+            <th>Confirmation</th>
+            <th>Rejection</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.ConvertID</th>
+                <td>@item.UserID</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductBalance</td>
+                <td>@item.ProductStatus</td>
+               
+
+                <td> <a href="/AdminProductExchange/UserProductConfirmation/@item.ConvertID" class="btn btn-outline-success"  >confirmation</a></td>
+                <td> <a href="/AdminProductExchange/UserProductReject/@item.ConvertID " class="btn btn-outline-warning">Rejaction</a></td>
+            </tr>
+        }
+    </table>

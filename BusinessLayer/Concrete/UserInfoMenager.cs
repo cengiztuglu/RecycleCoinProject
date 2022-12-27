@@ -8,10 +8,12 @@ using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
 using BusinessLayer.Abstact;
 
+
 namespace BusinessLayer.Concrete
 {
    public class UserInfoMenager:IUserInfoService
     {
+
         IUserInfoDal _userInfoDal;
 
         public UserInfoMenager(IUserInfoDal userInfoDal)
@@ -31,6 +33,7 @@ namespace BusinessLayer.Concrete
 
         public void UserInfoAdd(UserInfo userInfo)
         {
+            
             _userInfoDal.Insert(userInfo);
         }
 
