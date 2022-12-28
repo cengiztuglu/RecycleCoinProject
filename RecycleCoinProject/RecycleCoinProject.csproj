@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SendigRcController.cs" />
     <Compile Include="Controllers\UserPanelController.cs" />
     <Compile Include="Controllers\WalletController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2465,6 +2466,7 @@
     <Content Include="Views\UserPanel\UserProfile.cshtml" />
     <Content Include="Views\UserPanel\UserProductExchange.cshtml" />
     <Content Include="Views\AdminProductExchange\UserProductExchange.cshtml" />
+    <Content Include="Views\SendigRc\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,6 +9,7 @@ using EntityLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
 using BusinessLayer.Concrete;
+using System.Xml.Linq;
 
 namespace RecycleCoinProject.Controllers
 {
@@ -28,10 +29,18 @@ namespace RecycleCoinProject.Controllers
         [HttpPost]
         public ActionResult AddUser(UserInfo p)
         {
+
+            string convertSha = p.Name ;
+            string connection = "http://localhost:5000/api/blockchain/CreateSha256?convertsha=" + convertSha;
+            XDocument xapidonus = XDocument.Load(connection);
+            var xsha256 = xapidonus.Element("data").Element("sha").Value;
+            string sha = xsha256;
+            p.Sha256 = sha;
             UserInfoValidatior userInfoValidatior = new UserInfoValidatior();
             ValidationResult results = userInfoValidatior.Validate(p);
             if(results.IsValid)
             {
+                
                 ui.UserInfoAdd(p);
                 return RedirectToAction("Index");
             }

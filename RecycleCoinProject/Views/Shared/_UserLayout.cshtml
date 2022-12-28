@@ -56,12 +56,12 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeviews">
                             <a href="/UserPanel/UserProfile" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
-                                   My Profile
+                                    My Profile
                                 </p>
                             </a>
 
@@ -80,6 +80,15 @@ to get the desired effect
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Exchange
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/SendigRc/INDEX" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Transfer
                                 </p>
                             </a>
 
@@ -115,23 +124,23 @@ to get the desired effect
                         </li>
                         @if (User.IsInRole("B"))          /* eğer rol b ise göremez*/
                         {
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
-                                <p>
-                                   StockMarket
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-tree"></i>
+                                    <p>
+                                        StockMarket
 
-                                </p>
-                            </a>
+                                    </p>
+                                </a>
 
-                        </li>
+                            </li>
                         }
-                     
 
 
-                     
-                        
-                     
+
+
+
+
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
