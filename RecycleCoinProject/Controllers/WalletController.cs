@@ -46,12 +46,12 @@ namespace RecycleCoinProject.Controllers
             string mailinfo = (string)Session["Email"];
             var id = c.Logins.Where(x => x.Email == mailinfo).Select(y =>
             y.UserID).FirstOrDefault();
-            int s1 = Convert.ToInt32(carbonvalue);
+            double s1 = Convert.ToDouble(carbonvalue);
             
          
           
             var deger= um.GetById(id);
-            double rcvalue= s1/ 100;
+            double rcvalue= s1/ 1000000;
             var deger2= walletMenager.GetById(id);
              deger2.RcBalance += rcvalue;
            deger.Balance -= s1;

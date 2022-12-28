@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202212280330192_updatewallet.designer.cs">
       <DependentUpon>202212280330192_updatewallet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212280345338_as.cs" />
+    <Compile Include="Migrations\202212280345338_as.designer.cs">
+      <DependentUpon>202212280345338_as.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212280330192_updatewallet.resx">
       <DependentUpon>202212280330192_updatewallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212280345338_as.resx">
+      <DependentUpon>202212280345338_as.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
