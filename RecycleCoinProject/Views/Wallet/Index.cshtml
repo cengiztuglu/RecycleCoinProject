@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
 <!-- Content Wrapper. Contains page content -->
@@ -16,7 +16,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Cüzdan</li>
+                        <li class="breadcrumb-item active">Wallet</li>
                     </ol>
                 </div>
             </div>
@@ -30,13 +30,13 @@
                 <div class="col-12 ">
 
                 </div>
-
+                
                 <div class="col-md-6">
                     <!-- Widget: user widget style 1 -->
                     <div class="card card-widget widget-user">
                         <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget-user-header bg-info">
-                            <h3 class="widget-user-username">Kullanıcı Adı</h3>
+                            <h3 class="widget-user-username">@TempData["var"]</h3>
                         </div>
                         <div class="widget-user-image">
                             <img class="img-circle elevation-2" src="../dist/img/user1-128x128.jpg" alt="User Avatar">
@@ -45,8 +45,8 @@
                             <div class="row  justify-content-md-center">
                                 <div class="col-sm-4 border-right">
                                     <div class="description-block">
-                                        <h5 class="description-header">250</h5>
-                                        <span class="description-text">"a"</span>
+                                        <h5 class="description-header">@TempData["balance"]</h5>
+                                        <span class="text-black-50">The carbon you have</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
@@ -54,14 +54,14 @@
                                 <div class="col-sm-4 border-right">
                                     <div class="description-block">
                                         <h5 class="description-header">2.884.000</h5>
-                                        <span class="description-text"><a>@TempData["Veri"]</a></span>
+                                        <span class="text-black-50"><a>The Recycle Coin you have</a></span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4">
                                     <div class="description-block">
-                                        <h5 class="description-header">35</h5>
+                                        <h5 class="description-header">@TempData["count"]</h5>
                                         <span class="description-text">PRODUCTS</span>
                                     </div>
                                     <!-- /.description-block -->
@@ -73,47 +73,51 @@
                                     <p>SHA 256 ADRESİ</p>
                                 </div>
 
-                                <form class="col-8">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Dönüştürmek istedğiniz Carbon Adeti</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" value="sha256 adresi" readonly>
-                                    </div>
-
-
-                                    <div class="col-md-12">
-                                        <div class="card card-primary collapsed-card">
-                                            <div class="card-header">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                    <label class="form-check-label" for="exampleCheck1">Okudum onaylıyorum</label>
-                                                </div>
-
-                                                <div class="card-tools">
-                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                        <i class="fas fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                                <!-- /.card-tools -->
-                                            </div>
-                                            <!-- /.card-header -->
-                                            <div class="card-body">
-                                                Yukarıda bulunan SHA 256 adresi bana aittir carbonların rc dönüşümünü kabul ediyorum
-                                            </div>
-                                            <!-- /.card-body -->
+                                @using (Html.BeginForm("Index", "Wallet", FormMethod.Post))
+                                {
+                                    <form class="col-8">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Dönüştürmek istedğiniz Carbon Adeti</label>
+                                            <input type="text" class="form-control" name="carbonvalue" id="exampleInputEmail1" placeholder="Enter email">
                                         </div>
-                                        <!-- /.card -->
-                                    </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1" value="sha256 adresi" readonly>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="card card-primary collapsed-card">
+                                                <div class="card-header">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">Okudum onaylıyorum</label>
+                                                    </div>
+
+                                                    <div class="card-tools">
+                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <!-- /.card-tools -->
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body">
+                                                    Yukarıda bulunan SHA 256 adresi bana aittir carbonların rc dönüşümünü kabul ediyorum
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
+                                        </div>
 
 
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Recyle Coin Yap</button>
+                                        <button type="submit" class="btn btn-block btn-primary btn-lg"  >Recycle Coin Yap</button>
 
-                                </form>
-                                <!-- /.col -->
-                            </div>
+                                    </form>
+                                    <!-- /.col -->
+                                }
+                                </div>
+                               
                             <!-- /.row -->
                         </div>
                     </div>

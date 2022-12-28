@@ -22,6 +22,7 @@ namespace RecycleCoinProject.Controllers
         UserProductMenager upm = new UserProductMenager(new EfUserProductDal());
         ProductInfoMenager pi = new ProductInfoMenager(new EfProductInfoDal());
         ProductTypeMenager pt = new ProductTypeMenager(new EfProductTypeDal());
+      
         Context c = new Context();
 
         [HttpGet]
@@ -77,10 +78,12 @@ namespace RecycleCoinProject.Controllers
             List<SelectListItem> valueproduct = (from x in pi.GetProductInfoList()
                                                  select new SelectListItem
                                                  {
-                                                     Text = x.ProductName,
+                                                     Text= x.ProductName,
                                                      Value = x.ProductCarbon.ToString()
 
                                                  }).ToList();
+
+           
             ViewBag.pi = valueproduct;
             UserInfoAndProductInfoViewModel productInfoViewModel = new UserInfoAndProductInfoViewModel();
 
@@ -100,11 +103,14 @@ namespace RecycleCoinProject.Controllers
             var deger = um.GetById(id);
 
             UserProduct userProduct = new UserProduct();
+
             userProduct.UserID = id;
             userProduct.ProductBalance= (int)userInfoProduct.ProductInfo.ProductCarbon;
+            userProduct.ProductName = userInfoProduct.ProductInfo.ProductName;
             upm.UserProductAdd(userProduct);
 
             deger.Balance += (int)userInfoProduct.ProductInfo.ProductCarbon;
+
            
 
             um.UserInfoUpdate(deger);

@@ -9,11 +9,11 @@ namespace BusinessLayer.Abstract
 {
     public interface IWalletService
     {
-        List<Wallet> GetProductInfoList();
-        void ProductInfoAdd(Wallet wallet);
+        List<Wallet> WalletList();
+        void WalletAdd(Wallet wallet);
        Wallet GetById(int id);
 
-        void ProductInfoDelete(Wallet wallet);
-        void ProductInfoUpdate(Wallet wallet);
+        void WalletDelete(Wallet wallet);
+        void WalletUpdate(Wallet wallet);
     }
 }

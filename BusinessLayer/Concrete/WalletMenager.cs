@@ -2,38 +2,46 @@
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using DataAccessLayer.Abstract;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.Concrete.Repositories;
 
 namespace BusinessLayer.Concrete
 {
     public class WalletMenager : IWalletService
     {
+        IWalletDal _walletDal;
+        public WalletMenager(IWalletDal walletDal)
+        {
+            _walletDal = walletDal;
+
+        }
         public Wallet GetById(int id)
         {
-            throw new NotImplementedException();
+            return _walletDal.Get(x => x.UserID == id);
         }
 
-        public List<Wallet> GetProductInfoList()
+        public void WalletAdd(Wallet wallet)
         {
-            throw new NotImplementedException();
+            _walletDal.Insert(wallet);
+
         }
 
-
-        public void ProductInfoAdd(Wallet wallet)
+        public void WalletDelete(Wallet wallet)
         {
-            throw new NotImplementedException();
+            _walletDal.Delete(wallet);
         }
 
-        public void ProductInfoDelete(Wallet walllet)
+        public List<Wallet> WalletList()
         {
-            throw new NotImplementedException();
+        return   _walletDal.List();
         }
 
-        public void ProductInfoUpdate(Wallet wallet)
+        public void WalletUpdate(Wallet wallet)
         {
-            throw new NotImplementedException();
+            _walletDal.Update(wallet);
         }
     }
 }

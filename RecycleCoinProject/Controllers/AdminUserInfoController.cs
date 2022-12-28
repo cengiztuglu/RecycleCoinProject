@@ -75,7 +75,6 @@ namespace RecycleCoinProject.Controllers
 
 
 
-
         [HttpGet]
         public ActionResult CuzdanUser(int id)
         {

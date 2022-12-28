@@ -12,12 +12,9 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int UserID { get; set;  }
-
-        public int? totalCarbon { get; set; }
-
-        public int  RcBalance { get; set; }
-
-        public virtual ICollection<Login> Logins { get; set; }
+        public double  RcBalance { get; set; }
+        public string Sha256 { get; set; }
+    public virtual ICollection<Login> Logins { get; set; }
 
     }
 }

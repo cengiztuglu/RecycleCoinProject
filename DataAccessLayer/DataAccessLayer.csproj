@@ -88,6 +88,22 @@
     <Compile Include="Migrations\202212270020065_s.designer.cs">
       <DependentUpon>202212270020065_s.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212270213170_type.cs" />
+    <Compile Include="Migrations\202212270213170_type.designer.cs">
+      <DependentUpon>202212270213170_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212272324235_wallet.cs" />
+    <Compile Include="Migrations\202212272324235_wallet.designer.cs">
+      <DependentUpon>202212272324235_wallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212280150018_ass.cs" />
+    <Compile Include="Migrations\202212280150018_ass.designer.cs">
+      <DependentUpon>202212280150018_ass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212280330192_updatewallet.cs" />
+    <Compile Include="Migrations\202212280330192_updatewallet.designer.cs">
+      <DependentUpon>202212280330192_updatewallet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +129,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212270020065_s.resx">
       <DependentUpon>202212270020065_s.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212270213170_type.resx">
+      <DependentUpon>202212270213170_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212272324235_wallet.resx">
+      <DependentUpon>202212272324235_wallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212280150018_ass.resx">
+      <DependentUpon>202212280150018_ass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212280330192_updatewallet.resx">
+      <DependentUpon>202212280330192_updatewallet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
