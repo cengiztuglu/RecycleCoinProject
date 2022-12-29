@@ -13,12 +13,13 @@ namespace EntityLayer.Concrete
         [Key]
         [Required]
         public int UserID { get; set;  }
+      
         [Required]
         public double  RcBalance { get; set; }
 
         [Required]
         public string Sha256 { get; set; }
-    public virtual ICollection<Login> Logins { get; set; }
-
+       
+       
     }
 }

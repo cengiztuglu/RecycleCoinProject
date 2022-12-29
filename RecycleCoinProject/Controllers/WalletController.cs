@@ -11,6 +11,7 @@ using RecycleCoinProject.ViewModel;
 
 namespace RecycleCoinProject.Controllers
 {
+    
     public class WalletController : Controller
     {
         // GET: Wallet
@@ -20,11 +21,12 @@ namespace RecycleCoinProject.Controllers
         
         Context c = new Context();
         [HttpGet]
+        [Authorize(Roles = "A")]
         public ActionResult Index(int id=0)
         {
             string p = (string)Session["Email"];
             TempData["var"] = p;
-
+            Wallet wallet = new Wallet();
 
             UserProduct userProduct = new UserProduct();
          
@@ -35,7 +37,7 @@ namespace RecycleCoinProject.Controllers
             TempData["balance"] = deger.Balance;
             TempData["count"] = productcount;
             um.GetUserInfoList();
-
+            TempData["Rc"] = wallet.RcBalance;
 
             return View();
         }
@@ -55,10 +57,10 @@ namespace RecycleCoinProject.Controllers
             var deger2= walletMenager.GetById(id);
              deger2.RcBalance += rcvalue;
            deger.Balance -= s1;
-
+            
             walletMenager.WalletUpdate(deger2);
             um.UserInfoUpdate(deger);
-
+           
             ViewBag.p = id;
             ViewBag.a = id;
             return RedirectToAction("Index");

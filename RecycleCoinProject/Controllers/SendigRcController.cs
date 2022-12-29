@@ -20,8 +20,9 @@ namespace RecycleCoinProject.Controllers
         WalletMenager walletMenager = new WalletMenager(new EfWalletDal());
         Context c = new Context();
 
-
+        
         [HttpGet]
+        [Authorize(Roles = "A")]
         public ActionResult Index(int id=0)
         {
             string p = (string)Session["Email"];
@@ -47,31 +48,25 @@ namespace RecycleCoinProject.Controllers
 
         }
         [HttpPost]
-        public ActionResult Index(string rcinput,string Sha256)
+        public ActionResult Index(string rcinput)
         {
           
             string mailinfo = (string)Session["Email"];
             var id = c.Logins.Where(x => x.Email == mailinfo).Select(y =>
          y.UserID).FirstOrDefault();
             double s1 = Convert.ToDouble(rcinput);
-
-            //var deger = walletMenager.GetById(id);//tamam
             
-          // double rc =c.Wallets.Where(x => x.Sha256 ==Sha256).Select(y =>
-           //  y.RcBalance).FirstOrDefault();//girilen değer tablodaki değere eşitse
-          var userID = c.Wallets.Where(x => x.Sha256 == Sha256).Select(y =>
-       y.UserID).FirstOrDefault();//girilen değer tablodaki değere eşitse
+            var deger = walletMenager.GetById(id);
+            
             Wallet wallet = new Wallet();
-
-            //deger.RcBalance -= s1;//tamam 
-
-            wallet.UserID = userID;
-            wallet.RcBalance += s1;
+            deger.RcBalance -= s1;
+       
+          
            
 
-            walletMenager.WalletUpdate(wallet);
-
-
+          
+            walletMenager.WalletUpdate(deger);
+         
 
 
             ViewBag.p = id;

@@ -46,7 +46,7 @@ namespace EntityLayer.Concrete
         public virtual ICollection<Proc> Procs { get; set; }
         public virtual ICollection<UserInfo> UserInfos { get; set; }
     
-        public virtual ICollection<Wallet> Wallets { get; set; }
+      
 
 
 

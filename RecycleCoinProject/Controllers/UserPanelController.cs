@@ -26,6 +26,7 @@ namespace RecycleCoinProject.Controllers
         Context c = new Context();
 
         [HttpGet]
+        [Authorize]
         public ActionResult UserProfile(int id=0)
             
         {
@@ -65,6 +66,7 @@ namespace RecycleCoinProject.Controllers
 
 
         [HttpGet]
+        [Authorize]
         public ActionResult UserProductExchange(int id=0)
 
         {
