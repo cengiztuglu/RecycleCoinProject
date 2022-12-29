@@ -72,41 +72,17 @@
     <Compile Include="EntityFramework\EfUserInfoDal.cs" />
     <Compile Include="EntityFramework\EfUserProductDal.cs" />
     <Compile Include="EntityFramework\EfWalletDal.cs" />
-    <Compile Include="Migrations\202212251525088_sasa.cs" />
-    <Compile Include="Migrations\202212251525088_sasa.designer.cs">
-      <DependentUpon>202212251525088_sasa.cs</DependentUpon>
+    <Compile Include="Migrations\202212282345239_new.cs" />
+    <Compile Include="Migrations\202212282345239_new.designer.cs">
+      <DependentUpon>202212282345239_new.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212262204065_productUpdate.cs" />
-    <Compile Include="Migrations\202212262204065_productUpdate.designer.cs">
-      <DependentUpon>202212262204065_productUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202212290026394_fix.cs" />
+    <Compile Include="Migrations\202212290026394_fix.designer.cs">
+      <DependentUpon>202212290026394_fix.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212270016240_sha.cs" />
-    <Compile Include="Migrations\202212270016240_sha.designer.cs">
-      <DependentUpon>202212270016240_sha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212270020065_s.cs" />
-    <Compile Include="Migrations\202212270020065_s.designer.cs">
-      <DependentUpon>202212270020065_s.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212270213170_type.cs" />
-    <Compile Include="Migrations\202212270213170_type.designer.cs">
-      <DependentUpon>202212270213170_type.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212272324235_wallet.cs" />
-    <Compile Include="Migrations\202212272324235_wallet.designer.cs">
-      <DependentUpon>202212272324235_wallet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212280150018_ass.cs" />
-    <Compile Include="Migrations\202212280150018_ass.designer.cs">
-      <DependentUpon>202212280150018_ass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212280330192_updatewallet.cs" />
-    <Compile Include="Migrations\202212280330192_updatewallet.designer.cs">
-      <DependentUpon>202212280330192_updatewallet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212280345338_as.cs" />
-    <Compile Include="Migrations\202212280345338_as.designer.cs">
-      <DependentUpon>202212280345338_as.cs</DependentUpon>
+    <Compile Include="Migrations\202212290107351_s.cs" />
+    <Compile Include="Migrations\202212290107351_s.designer.cs">
+      <DependentUpon>202212290107351_s.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,32 +98,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212251525088_sasa.resx">
-      <DependentUpon>202212251525088_sasa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212282345239_new.resx">
+      <DependentUpon>202212282345239_new.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212262204065_productUpdate.resx">
-      <DependentUpon>202212262204065_productUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212290026394_fix.resx">
+      <DependentUpon>202212290026394_fix.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212270016240_sha.resx">
-      <DependentUpon>202212270016240_sha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212270020065_s.resx">
-      <DependentUpon>202212270020065_s.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212270213170_type.resx">
-      <DependentUpon>202212270213170_type.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212272324235_wallet.resx">
-      <DependentUpon>202212272324235_wallet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212280150018_ass.resx">
-      <DependentUpon>202212280150018_ass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212280330192_updatewallet.resx">
-      <DependentUpon>202212280330192_updatewallet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212280345338_as.resx">
-      <DependentUpon>202212280345338_as.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212290107351_s.resx">
+      <DependentUpon>202212290107351_s.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

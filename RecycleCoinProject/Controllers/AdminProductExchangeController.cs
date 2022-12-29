@@ -10,7 +10,7 @@ using EntityLayer.Concrete;
 namespace RecycleCoinProject.Controllers
 {
 
-  
+    [Authorize]
     public class AdminProductExchangeController : Controller
     {
         UserProductMenager upm = new UserProductMenager(new EfUserProductDal());

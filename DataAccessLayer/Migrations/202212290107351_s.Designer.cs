@@ -13,7 +13,7 @@ namespace DataAccessLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202212270020065_s"; }
+            get { return "202212290107351_s"; }
         }
         
         string IMigrationMetadata.Source

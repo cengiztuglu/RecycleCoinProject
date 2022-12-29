@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class updatewallet : DbMigration
+    public partial class fix : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Wallets", "RcBalance", c => c.Double(nullable: true));
+            AlterColumn("dbo.Wallets", "Sha256", c => c.String(nullable: true));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Wallets", "RcBalance", c => c.Int(nullable: false));
+            AlterColumn("dbo.Wallets", "Sha256", c => c.String());
         }
     }
 }

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class sasa : DbMigration
+    public partial class _new : DbMigration
     {
         public override void Up()
         {
@@ -65,7 +65,7 @@
                         Surname = c.String(maxLength: 50),
                         PhoneNumber = c.String(maxLength: 50),
                         Sha256 = c.String(),
-                        Balance = c.Int(nullable: false),
+                        Balance = c.Double(nullable: true),
                         Login_UserID = c.Int(),
                     })
                 .PrimaryKey(t => t.UserID)
@@ -77,8 +77,8 @@
                 c => new
                     {
                         UserID = c.Int(nullable: false, identity: true),
-                        totalCarbon = c.Int(),
-                        RcBalance = c.Int(nullable: false),
+                        RcBalance = c.Double(nullable: false),
+                        Sha256 = c.String(),
                     })
                 .PrimaryKey(t => t.UserID);
             
@@ -122,6 +122,8 @@
                         ConvertID = c.Int(nullable: false, identity: true),
                         UserID = c.Int(nullable: false),
                         ProductBalance = c.Int(nullable: false),
+                        ProductName = c.String(),
+                        ProductStatus = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ConvertID);
             
